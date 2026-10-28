@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Richview Gallery | Wedding Photography</title>
 <meta name="description" content="Richview Gallery: wedding photography in Nigeria. View the portfolio, see our rates and book your date.">
+<meta name="format-detection" content="email=no">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%93%B8%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
 <style>
@@ -52,6 +53,7 @@ section h2{font-size:clamp(2rem,6vw,3rem);text-align:center;margin-bottom:8px}
 #own3{position:relative;max-width:640px;margin:30px auto 0;padding:12px;border:1px dashed #e8cfa0;border-radius:8px;text-align:center;font-size:.8rem;color:#e8cfa0}
 #own3 .btn{padding:8px 18px;margin-left:8px}
 @media(max-width:800px){.hwrap{grid-template-columns:1fr;gap:34px}.htxt{text-align:center}.htxt p{margin:0 auto 28px}.collage{max-width:420px;margin:0 auto}}
+.em{color:var(--text);-webkit-user-select:all;user-select:all}
 [hidden]{display:none!important}
 .folders{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:30px 22px}
 .fold{border:0;background:none;padding:10px 0 0;cursor:pointer;display:block;text-align:left;font:inherit;color:inherit;width:100%}
@@ -213,7 +215,7 @@ footer{background:var(--hero);color:#b9bbd8;text-align:center;padding:36px 6vw;f
 <label>Package<select name="pkg"><option>Basic Package</option><option>Standard Package</option><option>Premium Package</option><option>Pre-wedding studio</option><option>Not sure yet</option></select></label></div>
 <label>Tell me more<textarea name="msg" rows="4"></textarea></label>
 <button class="btn" type="submit">Send Booking Request via WhatsApp</button>
-<div class="alt">Prefer email? <a id="mail">Send by email instead</a></div>
+<div class="alt">Prefer email? Write to us at <span class="em">richviewgallery1@gmail.com</span></div>
 <div class="alt">Or <a href="https://wa.me/2349053316802?text=Hello%20Richview%20Gallery%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">chat with me directly on WhatsApp</a> (09053316802)</div>
 </form>
 </section>
@@ -222,12 +224,12 @@ footer{background:var(--hero);color:#b9bbd8;text-align:center;padding:36px 6vw;f
 
 <script>
 // EDIT THESE: your WhatsApp number (country code, no +) and email
-var WHATSAPP="2349053316802", EMAIL="richviewgalery@gmail.com";
+var WHATSAPP="2349053316802", EMAIL="richviewgallery1@gmail.com";
 document.getElementById("y").textContent=new Date().getFullYear();
 var f=document.getElementById("f");
 function text(){var d=new FormData(f);return "Hello Richview Gallery, I'd like to book you.\n\nName: "+d.get("name")+"\nPhone: "+d.get("phone")+"\nEmail: "+d.get("email")+"\nDate: "+d.get("date")+"\nVenue: "+d.get("venue")+"\nPackage: "+d.get("pkg")+"\nDetails: "+d.get("msg")}
 f.addEventListener("submit",function(e){e.preventDefault();window.location.href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(text())});
-document.getElementById("mail").addEventListener("click",function(){if(!f.reportValidity())return;window.location.href="mailto:"+EMAIL+"?subject="+encodeURIComponent("Wedding booking request")+"&body="+encodeURIComponent(text())});
+
 (function(){
 var G=[],MAX=20,isOwner=false,A=null,ART=null;
 try{G=JSON.parse(document.getElementById("gdata").textContent)||[]}catch(e){}
